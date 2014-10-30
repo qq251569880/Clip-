@@ -1,19 +1,19 @@
 //
-//  ViewController.swift
+//  HelpInfoViewController.swift
 //  Clip+
 //
-//  Created by 张宏台 on 14/10/28.
+//  Created by 张宏台 on 14/10/30.
 //  Copyright (c) 2014年 张宏台. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate {
+class HelpInfoViewController: UIViewController {
 
-    @IBOutlet weak var tView: UITableView!
+
     
     //user define
-    var screenHeight:CGFloat = 0.0;
+
     override func viewDidLoad() {
         tView.delegate = self
         tView.dataSource = self
@@ -32,23 +32,20 @@ class ViewController: UIViewController ,UITableViewDataSource,UITableViewDelegat
         let identifier:String = "menuCell"
         var cell : UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(identifier) as? UITableViewCell
         if cell == nil {
-            cell = UITableViewCell(style:.Subtitle,reuseIdentifier:identifier)
+            cell = UITableViewCell(style:.Subtitle,reuseIdentifier:identifier);
         }else
         {
-            println("cell is nil")
+            println("cell is nil");
         }
-        cell!.textLabel.text = "some"
-        cell!.detailTextLabel!.text =  "some thing"
+        println("add \(indexPath.row) classify \(GmenuArray[indexPath.row].menuDisplay)")
+        cell!.textLabel.text = GmenuArray[indexPath.row].menuDisplay;
+        cell!.detailTextLabel!.text =   GmenuArray[indexPath.row].menuDiscription;
         cell!.detailTextLabel!.textColor = UIColor.lightGrayColor()
-/*        println("add \(indexPath!.row) classify \(GclassifyArray[indexPath!.row].roomClassifyName)")
-        cell!.textLabel.text = GclassifyArray[indexPath!.row].roomClassifyName
-        cell!.detailTextLabel.text =  GclassifyArray[indexPath!.row].roomClassifyDiscription
-        cell!.detailTextLabel.textColor = UIColor.lightGrayColor()
-*/        return cell!
+        return cell!
         
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 3//GclassifyArray.count
+        return GmenuArray.count;
     }
     //UITableViewDelegate协议实现
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
