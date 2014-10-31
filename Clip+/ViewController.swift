@@ -1,5 +1,5 @@
 //
-//  HelpInfoViewController.swift
+//  ViewController.swift
 //  Clip+
 //
 //  Created by 张宏台 on 14/10/30.
@@ -8,17 +8,18 @@
 
 import UIKit
 
-class HelpInfoViewController: UIViewController {
+class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
-
+    @IBOutlet weak var tView: UITableView!
     
     //user define
-
+    var screenHeight:CGFloat = 0.0;
     override func viewDidLoad() {
+        initRoomClassifyArray();
         tView.delegate = self
         tView.dataSource = self
         screenHeight = tView.frame.height
-
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -29,7 +30,7 @@ class HelpInfoViewController: UIViewController {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->UITableViewCell{
-        let identifier:String = "menuCell"
+        let identifier:String = "menuCell";
         var cell : UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(identifier) as? UITableViewCell
         if cell == nil {
             cell = UITableViewCell(style:.Subtitle,reuseIdentifier:identifier);
@@ -60,7 +61,7 @@ class HelpInfoViewController: UIViewController {
     }
     func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath) -> CGFloat{
         //println("\(indexPath.row):\(ourCellContents[indexPath.row].cellHeight)")
-        return screenHeight / 7.0;
+        return 60;
         
     }    //UITableViewDelegate协议实现
 
