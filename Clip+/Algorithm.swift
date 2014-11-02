@@ -7,22 +7,31 @@
 //
 
 import UIKit
+import Foundation
+//#define COMMON_DIGEST_FOR_OPENSSL
 
-#define COMMON_DIGEST_FOR_OPENSSL
-#import <CommonCrypto/CommonDigest.h>  
-
+/*
 extension String {
     func md5Encrypt()->String{
-        let original_str:[char] = self.utf8;  
-        let original_strlen = original_str.size();
-        let result = [unsigned char](count:CC_MD5_DIGEST_LENGTH,repeatValue:0);
+        var ns = NSString(self);
+        var utf8i  = ns.UTF8String
+        var utf8s = self.fromCString(cs:utf8i)
+        let original_strlen = original_str.count;
+        var result :[UInt8] = [UInt8]();
         
-        CC_MD5(original_str, original_strlen, result);  
+        CC_MD5(original_str, CC_LONG(original_strlen), result);
         var hash:String = "";  
-        for (int i = 0; i < 16; i++)  {
-            let str = "\(result[i].hex)";
-            hash.append(str);
+        for (var i:Int = 0; i < 16; i = i+1)  {
+            let str = "\(result[i])";
+            hash += str;
         }
         return hash.uppercaseString;  
     }
+}*/
+func md5(str:NSString)->String{
+    var ss = str.cStringUsingEncoding(NSUTF8StringEncoding);
+    var kdata = NSData(bytes: ss,length:str.length);
+    var out:[UInt8] = [UInt8](count:16,repeatedValue:0)
+    //CC_MD5(kdata,len:CC_LONG(str.length),md:out);
+    return "";
 }

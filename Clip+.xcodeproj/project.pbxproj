@@ -30,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9812CC751A06559600913A15 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
+		9812CC771A06705700913A15 /* libSystem.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSystem.dylib; path = usr/lib/libSystem.dylib; sourceTree = SDKROOT; };
 		9863965719FFBB18008D5CC5 /* Clip+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clip+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9863965B19FFBB18008D5CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9863965C19FFBB18008D5CC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,8 @@
 		9863965919FFBB18008D5CC5 /* Clip+ */ = {
 			isa = PBXGroup;
 			children = (
+				9812CC771A06705700913A15 /* libSystem.dylib */,
+				9812CC751A06559600913A15 /* libcommonCrypto.dylib */,
 				9863965A19FFBB18008D5CC5 /* Supporting Files */,
 				9863966319FFBB18008D5CC5 /* Images.xcassets */,
 				9863966519FFBB18008D5CC5 /* LaunchScreen.xib */,
@@ -364,10 +368,10 @@
 				);
 				INFOPLIST_FILE = "Clip+/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = /usr/local/cryptopp/lib;
+				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/system";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = cryptolib.h;
-				USER_HEADER_SEARCH_PATHS = /usr/local/cryptopp/include;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -385,10 +389,10 @@
 				);
 				INFOPLIST_FILE = "Clip+/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = /usr/local/cryptopp/lib;
+				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/system";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = cryptolib.h;
-				USER_HEADER_SEARCH_PATHS = /usr/local/cryptopp/include;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

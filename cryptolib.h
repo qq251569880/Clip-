@@ -8,6 +8,6 @@
 
 #ifndef Clip__cryptolib_h
 #define Clip__cryptolib_h
-#include "cryptopp/cryptlib.h"
-
+//#include "cryptopp/cryptlib.h"
+#include <CommonCrypto/CommonDigest.h>
 #endif
