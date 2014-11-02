@@ -1,15 +1,44 @@
 
-iOS³£ÓÃ¼ÓÃÜ·½·¨£¨aes¡¢md5¡¢base64£© 
+iOSå¸¸ç”¨åŠ å¯†æ–¹æ³•ï¼ˆaesã€md5ã€base64ï¼‰ 
 http://blog.csdn.net/z251257144/article/details/8291992
 
-cocos2dx Ê¹ÓÃ crypto++
+cocos2dx ä½¿ç”¨ crypto++
 http://blog.sina.com.cn/s/blog_62b2318d0101h095.html
 
 IOS (Command Line)
 http://www.cryptopp.com/wiki/IOS_%28Command_Line%29
 
- iOSÉîÈëÑ§Ï°£¨´´½¨¾²Ì¬¿âstatic library£©
+ iOSæ·±å…¥å­¦ä¹ ï¼ˆåˆ›å»ºé™æ€åº“static libraryï¼‰
  http://my.oschina.net/leejan97/blog/284193
  
- xcode4ÖĞÊ¹ÓÃµÚÈı·½¾²Ì¬¿â  
+ xcode4ä¸­ä½¿ç”¨ç¬¬ä¸‰æ–¹é™æ€åº“  
  http://zhgw01.blog.163.com/blog/static/10414812201173115925881/
+ 
+ swift MD5 ä»¥åŠ SHA1
+ http://blog.sina.com.cn/s/blog_ec30fb540102vfij.html
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ keyï¼š123
+keyçš„MD5å€¼ï¼š202CB962AC59075B964B07152D234B70
+æˆªå–3-19ä½ï¼šCB962AC59075B964
+å¾…åŠ å¯†æ˜æ–‡ä¸ºï¼š123
+åŠ å¯†åçš„æ•°ç»„ä¸ºï¼š[119, 53, 69, 10, -126, -112, 126, 77, -1, -6, 116, 2, -11, -21, -52, -91]
+base64åŠ å¯†å¹¶æ ¼å¼åŒ–ä¸ºå­—ç¬¦ä¸²ï¼šdzVFCoKQfk3/+nQC9evMpQ==
+å¢åŠ å¤´å°¾ï¼š[dzVFCoKQfk3/+nQC9evMpQ==]ç‚¹å‡»ä»¥æŸ¥çœ‹æ˜æ–‡www.datappp.com
