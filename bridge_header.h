@@ -6,8 +6,7 @@
 //  Copyright (c) 2014年 张宏台. All rights reserved.
 //
 
-#ifndef Clip__cryptolib_h
-#define Clip__cryptolib_h
-//#include "cryptopp/cryptlib.h"
-#include <CommonCrypto/CommonDigest.h>
-#endif
+
+
+#import "Clip+/Algorithm.h"
+

@@ -60,11 +60,11 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         if (indexPath.row == 0){
             //测试md5加密
             var passwd:NSString = "123";
-            keyString = keystr.md5Encrypt();
+            keyString = passwd.md5Encrypt();
             println("key \(keyString)");
 
-        }else if{
-            var content:NSString = "123";
+        }else if(indexPath.row == 1){
+            var content:NSString = "abc";
             var encode  = content.AES256EncryptWithKey(keyString);
             println("encode str \(encode)");
         }else{

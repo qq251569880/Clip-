@@ -13,8 +13,9 @@
 		9863966419FFBB18008D5CC5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9863966319FFBB18008D5CC5 /* Images.xcassets */; };
 		9863966719FFBB18008D5CC5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9863966519FFBB18008D5CC5 /* LaunchScreen.xib */; };
 		9863967319FFBB18008D5CC5 /* Clip_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9863967219FFBB18008D5CC5 /* Clip_Tests.swift */; };
+		9879D3001A07AD34008CDB39 /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 9879D2FB1A07AD34008CDB39 /* Algorithm.m */; };
+		9879D3011A07AD34008CDB39 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9879D2FE1A07AD34008CDB39 /* GTMBase64.m */; };
 		98A89FB61A03BDB5004733CC /* Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A89FB51A03BDB5004733CC /* Public.swift */; };
-		98A89FB81A03C2B5004733CC /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A89FB71A03C2B5004733CC /* Algorithm.swift */; };
 		98A89FBA1A03C2D5004733CC /* HelpInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A89FB91A03C2D5004733CC /* HelpInfoView.swift */; };
 		98A89FBC1A03C3DC004733CC /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 98A89FBB1A03C3DC004733CC /* ReadMe.txt */; };
 /* End PBXBuildFile section */
@@ -30,8 +31,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9812CC751A06559600913A15 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
-		9812CC771A06705700913A15 /* libSystem.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSystem.dylib; path = usr/lib/libSystem.dylib; sourceTree = SDKROOT; };
 		9863965719FFBB18008D5CC5 /* Clip+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clip+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9863965B19FFBB18008D5CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9863965C19FFBB18008D5CC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,11 +41,15 @@
 		9863966C19FFBB18008D5CC5 /* Clip+Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Clip+Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9863967119FFBB18008D5CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9863967219FFBB18008D5CC5 /* Clip_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clip_Tests.swift; sourceTree = "<group>"; };
+		9879D2C01A07A7CC008CDB39 /* bridge_header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bridge_header.h; sourceTree = "<group>"; };
+		9879D2FA1A07AD34008CDB39 /* Algorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Algorithm.h; sourceTree = "<group>"; };
+		9879D2FB1A07AD34008CDB39 /* Algorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Algorithm.m; sourceTree = "<group>"; };
+		9879D2FD1A07AD34008CDB39 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		9879D2FE1A07AD34008CDB39 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		9879D2FF1A07AD34008CDB39 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		98A89FB51A03BDB5004733CC /* Public.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Public.swift; sourceTree = "<group>"; };
-		98A89FB71A03C2B5004733CC /* Algorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Algorithm.swift; sourceTree = "<group>"; };
 		98A89FB91A03C2D5004733CC /* HelpInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpInfoView.swift; sourceTree = "<group>"; };
 		98A89FBB1A03C3DC004733CC /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
-		98A89FBE1A03CAA2004733CC /* cryptolib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cryptolib.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,7 @@
 		9863964E19FFBB18008D5CC5 = {
 			isa = PBXGroup;
 			children = (
+				9879D2C01A07A7CC008CDB39 /* bridge_header.h */,
 				9863965919FFBB18008D5CC5 /* Clip+ */,
 				9863966F19FFBB18008D5CC5 /* Clip+Tests */,
 				9863965819FFBB18008D5CC5 /* Products */,
@@ -89,18 +93,17 @@
 		9863965919FFBB18008D5CC5 /* Clip+ */ = {
 			isa = PBXGroup;
 			children = (
-				9812CC771A06705700913A15 /* libSystem.dylib */,
-				9812CC751A06559600913A15 /* libcommonCrypto.dylib */,
+				9879D2FA1A07AD34008CDB39 /* Algorithm.h */,
+				9879D2FB1A07AD34008CDB39 /* Algorithm.m */,
+				9879D2FC1A07AD34008CDB39 /* GTMBase64 */,
 				9863965A19FFBB18008D5CC5 /* Supporting Files */,
 				9863966319FFBB18008D5CC5 /* Images.xcassets */,
 				9863966519FFBB18008D5CC5 /* LaunchScreen.xib */,
 				9863966019FFBB18008D5CC5 /* Main.storyboard */,
 				98A89FB91A03C2D5004733CC /* HelpInfoView.swift */,
-				98A89FB71A03C2B5004733CC /* Algorithm.swift */,
 				98A89FB51A03BDB5004733CC /* Public.swift */,
 				9863965C19FFBB18008D5CC5 /* AppDelegate.swift */,
 				9863965E19FFBB18008D5CC5 /* ViewController.swift */,
-				98A89FBE1A03CAA2004733CC /* cryptolib.h */,
 			);
 			path = "Clip+";
 			sourceTree = "<group>";
@@ -128,6 +131,16 @@
 				9863967119FFBB18008D5CC5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9879D2FC1A07AD34008CDB39 /* GTMBase64 */ = {
+			isa = PBXGroup;
+			children = (
+				9879D2FD1A07AD34008CDB39 /* GTMBase64.h */,
+				9879D2FE1A07AD34008CDB39 /* GTMBase64.m */,
+				9879D2FF1A07AD34008CDB39 /* GTMDefines.h */,
+			);
+			path = GTMBase64;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,8 +244,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9879D3001A07AD34008CDB39 /* Algorithm.m in Sources */,
+				9879D3011A07AD34008CDB39 /* GTMBase64.m in Sources */,
 				9863965F19FFBB18008D5CC5 /* ViewController.swift in Sources */,
-				98A89FB81A03C2B5004733CC /* Algorithm.swift in Sources */,
 				9863965D19FFBB18008D5CC5 /* AppDelegate.swift in Sources */,
 				98A89FBA1A03C2D5004733CC /* HelpInfoView.swift in Sources */,
 				98A89FB61A03BDB5004733CC /* Public.swift in Sources */,
@@ -368,9 +382,12 @@
 				);
 				INFOPLIST_FILE = "Clip+/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/system";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/system",
+					"$(PROJECT_DIR)/Clip+",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = cryptolib.h;
+				SWIFT_OBJC_BRIDGING_HEADER = bridge_header.h;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
@@ -389,9 +406,12 @@
 				);
 				INFOPLIST_FILE = "Clip+/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/system";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/system",
+					"$(PROJECT_DIR)/Clip+",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = cryptolib.h;
+				SWIFT_OBJC_BRIDGING_HEADER = bridge_header.h;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
