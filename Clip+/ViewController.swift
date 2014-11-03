@@ -14,6 +14,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     //user define
     var screenHeight:CGFloat = 0.0;
+    var keyString:NSString = "";
     override func viewDidLoad() {
         initRoomClassifyArray();
         tView.delegate = self
@@ -56,8 +57,19 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         classifyId = GclassifyArray[indexPath.row].roomSortId
         println("Now switch to \(chatRoomClassify)")
   */
-        self.performSegueWithIdentifier("helpInfo",sender:self)
-        
+        if (indexPath.row == 0){
+            //测试md5加密
+            var passwd:NSString = "123";
+            keyString = keystr.md5Encrypt();
+            println("key \(keyString)");
+
+        }else if{
+            var content:NSString = "123";
+            var encode  = content.AES256EncryptWithKey(keyString);
+            println("encode str \(encode)");
+        }else{
+            self.performSegueWithIdentifier("helpInfo",sender:self)
+        }
     }
     func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath) -> CGFloat{
         //println("\(indexPath.row):\(ourCellContents[indexPath.row].cellHeight)")
