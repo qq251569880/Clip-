@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+
+let defaultKey="(*&^%&^%";
+
+
 //主页菜单显示
 struct MainMenuInfo{
     var menuId:Int

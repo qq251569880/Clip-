@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate {
 
     @IBOutlet weak var tView: UITableView!
     
     //user define
     var screenHeight:CGFloat = 0.0;
     var keyString:NSString = "";
+    var passWd:NSString = "";
     override func viewDidLoad() {
         initRoomClassifyArray();
         tView.delegate = self
@@ -65,12 +66,45 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
 
         }else if (indexPath.row == 1){
             //测试md5加密
-//             var keyAlert = KeyAlertViewController(initWithTitle:@"密码修改",
-//                                                   message:nil,
-//                                                   delegate:self,
-//                                                   cancelButtonTitle:@"确定",
-//                                                   otherButtonTitles:@"取消", nil);
-//             keyAlert.show();
+            var password:UITextField = UITextField();
+            var keyAlert = UIAlertController(title:"修改密钥",message:nil,preferredStyle:.Alert);
+            let commitAction = UIAlertAction(title: "修改", style: .Default) { action in
+                var updateFlag = false;
+                if keyAlert.textFields != nil{
+                    for tf:AnyObject in keyAlert.textFields!{
+                        var textF = tf as? UITextField;
+                        if textF != nil{
+                            self.passWd = textF!.text;
+                            if self.passWd != ""{
+                                self.keyString = self.passWd.md5Encrypt();
+                                updateFlag = true;
+                                println("new key is \(self.keyString)");
+                            }
+                        }
+                    }
+                }
+                if (!updateFlag){
+                    self.passWd = ""
+                    self.keyString = self.passWd.md5Encrypt();
+                    println("use default key");
+
+            }
+            }
+            let cancelAction = UIAlertAction(title: "取消", style: .Cancel) { action in
+                
+                println("key still is \(self.passWd)");
+            }
+            keyAlert.addAction(commitAction);
+            keyAlert.addAction(cancelAction);
+            
+            keyAlert.addTextFieldWithConfigurationHandler { (password) -> Void in
+                password.borderStyle = .None;
+                password.placeholder = "当前使用默认密钥，请输入新密钥";
+                password.delegate = self;
+                password.becomeFirstResponder();
+            }
+            
+            presentViewController(keyAlert, animated: true, completion: nil)
         }else if(indexPath.row == 2){
             var content:NSString = "abc";
             var encode  = content.AES256EncryptWithKey(keyString);
@@ -101,6 +135,14 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             println("segue id = \(segue.identifier)")
         }
     }*/
+    
+    func textFieldShouldReturn(textField:UITextField) -> Bool {
+        //if (textField == self.userText) {
+        textField.resignFirstResponder();
+        //}
+        
+        return true
+    }
 
 }
 
