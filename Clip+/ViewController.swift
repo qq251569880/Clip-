@@ -56,14 +56,22 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         classifyId = GclassifyArray[indexPath.row].roomSortId
         println("Now switch to \(chatRoomClassify)")
-  */
+  */        
         if (indexPath.row == 0){
             //测试md5加密
             var passwd:NSString = "123";
             keyString = passwd.md5Encrypt();
             println("key \(keyString)");
 
-        }else if(indexPath.row == 1){
+        }else if (indexPath.row == 1){
+            //测试md5加密
+//             var keyAlert = KeyAlertViewController(initWithTitle:@"密码修改",
+//                                                   message:nil,
+//                                                   delegate:self,
+//                                                   cancelButtonTitle:@"确定",
+//                                                   otherButtonTitles:@"取消", nil);
+//             keyAlert.show();
+        }else if(indexPath.row == 2){
             var content:NSString = "abc";
             var encode  = content.AES256EncryptWithKey(keyString);
             println("encode str \(encode)");

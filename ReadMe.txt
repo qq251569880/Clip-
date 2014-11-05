@@ -6,7 +6,7 @@ cocos2dx 使用 crypto++
 http://blog.sina.com.cn/s/blog_62b2318d0101h095.html
 
 IOS (Command Line)
-http://www.cryptopp.com/wiki/IOS_%28Command_Line%29
+		
 
  iOS深入学习（创建静态库static library）
  http://my.oschina.net/leejan97/blog/284193
@@ -18,8 +18,9 @@ http://www.cryptopp.com/wiki/IOS_%28Command_Line%29
  http://blog.sina.com.cn/s/blog_ec30fb540102vfij.html
  
  
- 
- 
+对话框
+IOS: 自定义AlertView实现模态对话框 
+http://blog.csdn.net/guchengluoye/article/details/7824084 
  
  
  
