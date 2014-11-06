@@ -15,13 +15,15 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     //user define
     var screenHeight:CGFloat = 0.0;
     var keyString:NSString = "";
-    var passWd:NSString = "";
+    var passWd:NSString = defaultKey;
     override func viewDidLoad() {
         initRoomClassifyArray();
         tView.delegate = self
         tView.dataSource = self
         screenHeight = tView.frame.height
-        
+        //默认密钥生成
+        keyString = passWd.md5Encrypt();
+
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -84,7 +86,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                     }
                 }
                 if (!updateFlag){
-                    self.passWd = ""
+                    self.passWd = defaultKey;
                     self.keyString = self.passWd.md5Encrypt();
                     println("use default key");
 
@@ -99,7 +101,11 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             
             keyAlert.addTextFieldWithConfigurationHandler { (password) -> Void in
                 password.borderStyle = .None;
-                password.placeholder = "当前使用默认密钥，请输入新密钥";
+                if(passWd == defaultKey){
+                    password.placeholder = "当前使用默认密钥，请输入新密钥";
+                }else{
+                    password.placeholder = "请输入新密钥,输入为空使用默认密钥";
+                }
                 password.delegate = self;
                 password.becomeFirstResponder();
             }

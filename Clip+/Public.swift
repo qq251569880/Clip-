@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-let defaultKey="(*&^%&^%";
+let defaultKey="f_sa^j34@sajf#!214=-f-dsf9=-241";
 
 
 //主页菜单显示
