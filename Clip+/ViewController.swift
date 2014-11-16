@@ -101,7 +101,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             
             keyAlert.addTextFieldWithConfigurationHandler { (password) -> Void in
                 password.borderStyle = .None;
-                if(passWd == defaultKey){
+                if(self.passWd == defaultKey){
                     password.placeholder = "当前使用默认密钥，请输入新密钥";
                 }else{
                     password.placeholder = "请输入新密钥,输入为空使用默认密钥";
@@ -124,9 +124,12 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         return 60;
         
     }    //UITableViewDelegate协议实现
+    @IBAction func backBtnClick(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true,completion:nil)
+
+    }
 
 /*    override func prepareForSegue(segue:UIStoryboardSegue,sender:AnyObject ){
-        
         if (segue.identifier == "helpInfo") {
             var chatclassifyController:IHClassifyRoomViewController  = segue.destinationViewController as IHClassifyRoomViewController;
             chatclassifyController.chatRoomClassify = chatRoomClassify;

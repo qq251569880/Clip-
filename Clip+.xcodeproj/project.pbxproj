@@ -16,7 +16,7 @@
 		9879D3001A07AD34008CDB39 /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 9879D2FB1A07AD34008CDB39 /* Algorithm.m */; };
 		9879D3011A07AD34008CDB39 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9879D2FE1A07AD34008CDB39 /* GTMBase64.m */; };
 		98A89FB61A03BDB5004733CC /* Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A89FB51A03BDB5004733CC /* Public.swift */; };
-		98A89FBA1A03C2D5004733CC /* HelpInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A89FB91A03C2D5004733CC /* HelpInfoView.swift */; };
+		98A89FBA1A03C2D5004733CC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A89FB91A03C2D5004733CC /* MainView.swift */; };
 		98A89FBC1A03C3DC004733CC /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 98A89FBB1A03C3DC004733CC /* ReadMe.txt */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +48,7 @@
 		9879D2FE1A07AD34008CDB39 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		9879D2FF1A07AD34008CDB39 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		98A89FB51A03BDB5004733CC /* Public.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Public.swift; sourceTree = "<group>"; };
-		98A89FB91A03C2D5004733CC /* HelpInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpInfoView.swift; sourceTree = "<group>"; };
+		98A89FB91A03C2D5004733CC /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		98A89FBB1A03C3DC004733CC /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,7 +100,7 @@
 				9863966319FFBB18008D5CC5 /* Images.xcassets */,
 				9863966519FFBB18008D5CC5 /* LaunchScreen.xib */,
 				9863966019FFBB18008D5CC5 /* Main.storyboard */,
-				98A89FB91A03C2D5004733CC /* HelpInfoView.swift */,
+				98A89FB91A03C2D5004733CC /* MainView.swift */,
 				98A89FB51A03BDB5004733CC /* Public.swift */,
 				9863965C19FFBB18008D5CC5 /* AppDelegate.swift */,
 				9863965E19FFBB18008D5CC5 /* ViewController.swift */,
@@ -248,7 +248,7 @@
 				9879D3011A07AD34008CDB39 /* GTMBase64.m in Sources */,
 				9863965F19FFBB18008D5CC5 /* ViewController.swift in Sources */,
 				9863965D19FFBB18008D5CC5 /* AppDelegate.swift in Sources */,
-				98A89FBA1A03C2D5004733CC /* HelpInfoView.swift in Sources */,
+				98A89FBA1A03C2D5004733CC /* MainView.swift in Sources */,
 				98A89FB61A03BDB5004733CC /* Public.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
