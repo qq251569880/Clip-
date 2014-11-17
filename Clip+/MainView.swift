@@ -15,12 +15,21 @@ class MainViewController: UIViewController,UITextViewDelegate {
     @IBOutlet var subView: UIView!
     @IBOutlet weak var upTextView: UITextView!
     @IBOutlet weak var bottomTextView: UITextView!
+
+    //自定义变量
     var activeTextView: UITextView? = nil;
     var subViewY:CGFloat = 0;
+
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+        //默认密钥生成
+        keyString = passWd.md5Encrypt();
+
+
         var topView:UIToolbar = UIToolbar(frame: CGRectMake(0, 0, 320, 30));
         var spaceBtn:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: self, action: nil)
         var doneBtn:UIBarButtonItem = UIBarButtonItem(title: "Done", style: .Done, target: self, action: "dismissKeyBoard")
@@ -44,7 +53,7 @@ class MainViewController: UIViewController,UITextViewDelegate {
             
         }
     }
-  
+    //TextView代理
     //开始编辑输入框的时候，软键盘出现，执行此事件
     func textViewDidBeginEditing(textView: UITextView)
     {
@@ -91,13 +100,18 @@ class MainViewController: UIViewController,UITextViewDelegate {
         //println(pasteBoard.string);
     }
     @IBAction func upSwitchClick(sender: UIButton) {
-        
+        var Text1:String = bottomTextView.text;
+        var Text2:String = trimSpace(Text1);
+        upTextView.text = switchFormat(Text2);
     }
     @IBAction func clearBtnClick(sender: UIButton) {
         upTextView.text = "";
         bottomTextView.text = "";
     }
     @IBAction func bottomSwitchClick(sender: UIButton) {
+        var Text1:String = upTextView.text;
+        var Text2:String = trimSpace(Text1);
+        bottomTextView.text = switchFormat(Text2);
         
     }
     @IBAction func bottomPasteClick(sender: UIButton) {
@@ -109,7 +123,6 @@ class MainViewController: UIViewController,UITextViewDelegate {
         pasteBoard.string = upTextView.text;
     }
     
-    //TextView代理
     
 }
 

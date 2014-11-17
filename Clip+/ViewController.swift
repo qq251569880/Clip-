@@ -14,15 +14,11 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     //user define
     var screenHeight:CGFloat = 0.0;
-    var keyString:NSString = "";
-    var passWd:NSString = defaultKey;
     override func viewDidLoad() {
         initRoomClassifyArray();
         tView.delegate = self
         tView.dataSource = self
         screenHeight = tView.frame.height
-        //默认密钥生成
-        keyString = passWd.md5Encrypt();
 
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -61,10 +57,6 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         println("Now switch to \(chatRoomClassify)")
   */        
         if (indexPath.row == 0){
-            //测试md5加密
-            var passwd:NSString = "123";
-            keyString = passwd.md5Encrypt();
-            println("key \(keyString)");
 
         }else if (indexPath.row == 1){
             //测试md5加密
@@ -76,32 +68,32 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                     for tf:AnyObject in keyAlert.textFields!{
                         var textF = tf as? UITextField;
                         if textF != nil{
-                            self.passWd = textF!.text;
-                            if self.passWd != ""{
-                                self.keyString = self.passWd.md5Encrypt();
+                            passWd = textF!.text;
+                            if passWd != ""{
+                                keyString = passWd.md5Encrypt();
                                 updateFlag = true;
-                                println("new key is \(self.keyString)");
+                                println("new key is \(keyString)");
                             }
                         }
                     }
                 }
                 if (!updateFlag){
-                    self.passWd = defaultKey;
-                    self.keyString = self.passWd.md5Encrypt();
+                    passWd = defaultKey;
+                    keyString = passWd.md5Encrypt();
                     println("use default key");
 
             }
             }
             let cancelAction = UIAlertAction(title: "取消", style: .Cancel) { action in
                 
-                println("key still is \(self.passWd)");
+                println("key still is \(passWd)");
             }
             keyAlert.addAction(commitAction);
             keyAlert.addAction(cancelAction);
             
             keyAlert.addTextFieldWithConfigurationHandler { (password) -> Void in
                 password.borderStyle = .None;
-                if(self.passWd == defaultKey){
+                if(passWd == defaultKey){
                     password.placeholder = "当前使用默认密钥，请输入新密钥";
                 }else{
                     password.placeholder = "请输入新密钥,输入为空使用默认密钥";
@@ -112,11 +104,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             
             presentViewController(keyAlert, animated: true, completion: nil)
         }else if(indexPath.row == 2){
-            var content:NSString = "abc";
-            var encode  = content.AES256EncryptWithKey(keyString);
-            println("encode str \(encode)");
         }else{
-            self.performSegueWithIdentifier("helpInfo",sender:self)
+            //self.performSegueWithIdentifier("helpInfo",sender:self)
         }
     }
     func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath) -> CGFloat{

@@ -22,8 +22,8 @@ IOS (Command Line)
 IOS: 自定义AlertView实现模态对话框 
 http://blog.csdn.net/guchengluoye/article/details/7824084 
  
- 
- 
+ swift字符串截取
+ http://www.swiftmi.com/topic/76.html
  
  
  
@@ -39,7 +39,7 @@ http://blog.csdn.net/guchengluoye/article/details/7824084
  key：123
 key的MD5值：202CB962AC59075B964B07152D234B70
 截取3-19位：CB962AC59075B964
-待加密明文为：123
+待加密明文为：abc
 加密后的数组为：[119, 53, 69, 10, -126, -112, 126, 77, -1, -6, 116, 2, -11, -21, -52, -91]
 base64加密并格式化为字符串：dzVFCoKQfk3/+nQC9evMpQ==
 增加头尾：[dzVFCoKQfk3/+nQC9evMpQ==]点击以查看明文www.datappp.com

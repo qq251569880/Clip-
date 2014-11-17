@@ -8,9 +8,14 @@
 import Foundation
 import UIKit
 
-
+//默认密钥
 let defaultKey="f_sa^j34@sajf#!214=-f-dsf9=-241";
+//密钥明文，全局使用
+var passWd:NSString = defaultKey;
+//MD5加密后的密钥，全局使用
+var keyString:String = "";
 
+let tipString="点击以查看明文www.datappp.com";
 
 //主页菜单显示
 struct MainMenuInfo{
@@ -57,3 +62,50 @@ func initRoomClassifyArray(){
 
 }
 
+func trimSpace(inStr:String) -> outStr:String {
+    let index = advance(s.startIndex, 1);//去首字符
+    let index2 = advance(s.endIndex, -1);//去末字符
+    var tmpStr:String = inStr;
+    while(tmpStr.hasPrefix(" ")){
+        tmpStr = tmpStr.substringFromIndex(index); 
+    }
+    while(tmpStr.hasSuffix(" ")||tmpStr.hasSuffix("\n")||tmpStr.hasSuffix("\r")){
+        tmpStr = tmpStr.substringToIndex(index2);
+    }
+
+    if(tmpStr.hasSuffix(tipString)){
+        let indexTip = advance(s.endIndex,-tipString.length);
+        println("before trim:\(tmpStr)");
+        tmpStr = tmpStr.substringToIndex(indexTip);
+        println("after  trim:\(tmpStr)");
+    }
+    return tmpStr;
+}
+
+func switchFormat(inStr:String) -> outStr:String? {
+    var retStr:String? = nil;
+    if(inStr.hasPrefix("[") && inStr.hasSuffix("]")){
+        let index = advance(s.startIndex, 1);//去首字符
+        let index2 = advance(s.endIndex, -1);//去末字符
+        var tmpStr = inStr;
+        tmpStr = tmpStr.substringFromIndex(index); 
+        tmpStr = tmpStr.substringToIndex(index2);
+        var content:NSString = inStr;
+        var retNStr  = content.AES256DecryptWithKey(keyString);
+        println("decode str \(retNStr)"); 
+        if retNstr != nil{
+            retStr = retNStr;
+        }
+
+    }else{
+        var content:NSString = inStr;
+        var retNStr  = content.AES256EncryptWithKey(keyString);
+        println("encode str \(retNStr)"); 
+        if retNstr != nil{
+            retStr = retNStr;
+            retStr = "["+retStr+"]"+tipString;
+        }
+
+    }
+    return retStr;
+}
