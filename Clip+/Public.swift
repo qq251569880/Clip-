@@ -62,19 +62,23 @@ func initRoomClassifyArray(){
 
 }
 
-func trimSpace(inStr:String) -> outStr:String {
-    let index = advance(s.startIndex, 1);//去首字符
-    let index2 = advance(s.endIndex, -1);//去末字符
+func trimSpace(inStr:String)->String{
     var tmpStr:String = inStr;
     while(tmpStr.hasPrefix(" ")){
-        tmpStr = tmpStr.substringFromIndex(index); 
+        let index = advance(tmpStr.startIndex, 1);//去首字符
+        tmpStr = tmpStr.substringFromIndex(index);
     }
     while(tmpStr.hasSuffix(" ")||tmpStr.hasSuffix("\n")||tmpStr.hasSuffix("\r")){
+        let index2 = advance(tmpStr.endIndex, -1);//去末字符
         tmpStr = tmpStr.substringToIndex(index2);
     }
 
     if(tmpStr.hasSuffix(tipString)){
-        let indexTip = advance(s.endIndex,-tipString.length);
+        
+        println(tipString.lengthOfBytesUsingEncoding(NSUTF8StringEncoding));
+        println(countElements(tipString));
+        
+        let indexTip = advance(tmpStr.endIndex,-(countElements(tipString)));
         println("before trim:\(tmpStr)");
         tmpStr = tmpStr.substringToIndex(indexTip);
         println("after  trim:\(tmpStr)");
@@ -82,28 +86,22 @@ func trimSpace(inStr:String) -> outStr:String {
     return tmpStr;
 }
 
-func switchFormat(inStr:String) -> outStr:String? {
+func switchFormat(inStr:String)->String?{
     var retStr:String? = nil;
     if(inStr.hasPrefix("[") && inStr.hasSuffix("]")){
-        let index = advance(s.startIndex, 1);//去首字符
-        let index2 = advance(s.endIndex, -1);//去末字符
         var tmpStr = inStr;
-        tmpStr = tmpStr.substringFromIndex(index); 
+        let index = advance(tmpStr.startIndex, 1);//去首字符
+        tmpStr = tmpStr.substringFromIndex(index);
+        let index2 = advance(tmpStr.endIndex, -1);//去末字符
         tmpStr = tmpStr.substringToIndex(index2);
-        var content:NSString = inStr;
-        var retNStr  = content.AES256DecryptWithKey(keyString);
-        println("decode str \(retNStr)"); 
-        if retNstr != nil{
-            retStr = retNStr;
-        }
+        retStr  = tmpStr.AES256DecryptWithKey(keyString);
+        println("decode str \(retStr)");
 
     }else{
-        var content:NSString = inStr;
-        var retNStr  = content.AES256EncryptWithKey(keyString);
-        println("encode str \(retNStr)"); 
-        if retNstr != nil{
-            retStr = retNStr;
-            retStr = "["+retStr+"]"+tipString;
+        retStr  = inStr.AES256EncryptWithKey(keyString);
+        println("encode str \(retStr)");
+        if retStr != nil{
+            retStr = "["+retStr!+"]"+tipString;
         }
 
     }
