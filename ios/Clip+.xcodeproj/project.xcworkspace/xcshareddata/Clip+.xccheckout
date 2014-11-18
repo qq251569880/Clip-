@@ -14,11 +14,11 @@
 		<string>https://github.com/qq251569880/Clip-.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Clip+.xcodeproj</string>
+	<string>ios/Clip+.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1CA97CAC889A76A3E94531865F7C0CC3264593EE</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/qq251569880/Clip-.git</string>
