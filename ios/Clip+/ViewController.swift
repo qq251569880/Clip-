@@ -82,7 +82,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                     keyString = passWd.md5Encrypt();
                     println("use default key");
 
-            }
+                }
             }
             let cancelAction = UIAlertAction(title: "取消", style: .Cancel) { action in
                 
