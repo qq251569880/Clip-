@@ -676,8 +676,11 @@
                                 <rect key="frame" x="308" y="227" width="98" height="19"/>
                                 <buttonCell key="cell" type="roundRect" title="修改密钥" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ykl-lm-ho8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="controlContent"/>
+                                    <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="setKeyClick:" target="XfG-lQ-9wD" id="Cr3-GW-2E7"/>
+                                </connections>
                             </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Yu-TI-trC">
                                 <rect key="frame" x="42" y="225" width="246" height="25"/>
@@ -709,6 +712,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="24"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="rightSwitchClick:" target="XfG-lQ-9wD" id="Ixh-FX-RKJ"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dlx-1i-ghd">
                                 <rect key="frame" x="222" y="71" width="36" height="36"/>
@@ -716,9 +722,17 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="24"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="leftSwitchClick:" target="XfG-lQ-9wD" id="J8R-In-iuz"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="keyTextField" destination="6Yu-TI-trC" id="9wP-VA-izd"/>
+                        <outlet property="leftTextField" destination="8K6-of-DeW" id="78y-vS-itR"/>
+                        <outlet property="rightTextField" destination="uj3-i5-1a1" id="iOi-Az-0os"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

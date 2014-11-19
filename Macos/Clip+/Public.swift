@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 张宏台. All rights reserved.
 //
 import Foundation
-import UIKit
+
 
 //默认密钥
 let defaultKey="f_sa^j34@sajf#!214=-f-dsf9=-241";
@@ -44,7 +44,7 @@ func trimSpace(inStr:String)->String{
 func switchFormat(inStr:String)->String?{
     var retStr:String? = nil;
     if(inStr.hasPrefix("[") && inStr.hasSuffix("]")){
-        var tmpStr = inStr;
+        var tmpStr:String = inStr;
         let index = advance(tmpStr.startIndex, 1);//去首字符
         tmpStr = tmpStr.substringFromIndex(index);
         let index2 = advance(tmpStr.endIndex, -1);//去末字符

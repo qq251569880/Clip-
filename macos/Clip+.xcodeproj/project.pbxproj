@@ -14,6 +14,7 @@
 		984EDE1A1A1B758100F12B96 /* Clip_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984EDE191A1B758100F12B96 /* Clip_Tests.swift */; };
 		984EDE261A1B77C000F12B96 /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 984EDE251A1B77C000F12B96 /* Algorithm.m */; };
 		984EDE2B1A1B7B0400F12B96 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 984EDE291A1B7B0400F12B96 /* GTMBase64.m */; };
+		98C647E71A1CCA8F0047E9BD /* Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C647E61A1CCA8F0047E9BD /* Public.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		984EDE281A1B7B0400F12B96 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		984EDE291A1B7B0400F12B96 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		984EDE2A1A1B7B0400F12B96 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		98C647E61A1CCA8F0047E9BD /* Public.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Public.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				984EDE271A1B7B0400F12B96 /* GTMBase64 */,
 				984EDE241A1B77C000F12B96 /* Algorithm.h */,
 				984EDE251A1B77C000F12B96 /* Algorithm.m */,
+				98C647E61A1CCA8F0047E9BD /* Public.swift */,
 				984EDE061A1B758100F12B96 /* AppDelegate.swift */,
 				984EDE081A1B758100F12B96 /* ViewController.swift */,
 				984EDE0A1A1B758100F12B96 /* Images.xcassets */,
@@ -232,6 +235,7 @@
 			files = (
 				984EDE091A1B758100F12B96 /* ViewController.swift in Sources */,
 				984EDE261A1B77C000F12B96 /* Algorithm.m in Sources */,
+				98C647E71A1CCA8F0047E9BD /* Public.swift in Sources */,
 				984EDE071A1B758100F12B96 /* AppDelegate.swift in Sources */,
 				984EDE2B1A1B7B0400F12B96 /* GTMBase64.m in Sources */,
 			);
@@ -352,6 +356,7 @@
 				INFOPLIST_FILE = "Clip+/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = bridge_header.h;
 			};
 			name = Debug;
 		};
@@ -363,6 +368,7 @@
 				INFOPLIST_FILE = "Clip+/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = bridge_header.h;
 			};
 			name = Release;
 		};

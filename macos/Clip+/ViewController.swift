@@ -10,11 +10,11 @@ import Cocoa
 
 class ViewController: NSViewController {
 
-    @IBOutlet weak var leftTextField: UITextField!
-    @IBOutlet weak var rightTextField: UITextField!
-
-    @IBOutlet weak var keyTextField: UITextField!
-
+    @IBOutlet weak var keyTextField: NSTextField!
+    @IBOutlet weak var leftTextField: NSTextField!
+    
+    @IBOutlet weak var rightTextField: NSTextField!
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         //默认密钥生成
@@ -28,21 +28,35 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-    @IBAction func rightSwitchClick(sender: UIButton) {
-        var Text1:String = leftTextField.text;
+    @IBAction func rightSwitchClick(sender: AnyObject) {
+        var Text1:String = leftTextField.stringValue;
         var Text2:String = trimSpace(Text1);
-        rightTextField.text = switchFormat(Text2);
+        var opString = switchFormat(Text2);
+        if opString != nil {
+            rightTextField.stringValue = opString!;
+        }else
+        {
+            rightTextField.stringValue = "";
+            rightTextField.placeholderString = "加解密错误";
+        }
         
     }
-    @IBAction func leftSwitchClick(sender: UIButton) {
-        var Text1:String = rightTextField.text;
+    @IBAction func leftSwitchClick(sender: AnyObject) {
+       var Text1:String = rightTextField.stringValue;
         var Text2:String = trimSpace(Text1);
-        leftTextField.text = switchFormat(Text2);
+        var opString = switchFormat(Text2);
+        if opString != nil {
+            leftTextField.stringValue = opString!;
+        }else
+        {
+            rightTextField.stringValue = "";
+            leftTextField.placeholderString = "加解密错误";
+        }
     }
     
-    @IBAction func leftSwitchClick(sender: UIButton) {
-        if keyTextField.text != "" {
-            keyString = keyTextField.text.md5Encrypt();
+    @IBAction func setKeyClick(sender: AnyObject) {
+        if keyTextField.stringValue != "" {
+            keyString = keyTextField.stringValue.md5Encrypt();
             println("new key is \(keyString)");
         }else{
             passWd = defaultKey;
