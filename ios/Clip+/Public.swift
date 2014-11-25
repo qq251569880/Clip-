@@ -16,6 +16,8 @@ var passWd:NSString = defaultKey;
 var keyString:String = "";
 
 let tipString="点击以查看明文www.datappp.com";
+// 通知栏消息
+var localNotif:UILocalNotification? = UILocalNotification();
 
 //主页菜单显示
 struct MainMenuInfo{

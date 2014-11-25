@@ -13,9 +13,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        //通知栏
+        
+        
+        
+        var acceptAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction();
+        acceptAction.identifier = "ACCEPT_IDENTIFIER";
+        acceptAction.title = "转换";
+        acceptAction.activationMode = UIUserNotificationActivationMode.Background;
+        acceptAction.destructive = false;
+        acceptAction.authenticationRequired = false;
+        
+        var inviteCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory();
+        inviteCategory.identifier = "INVITE_CATEGORY";
+        inviteCategory.setActions([acceptAction], forContext: .Default);
+        inviteCategory.setActions([acceptAction], forContext: .Minimal);
+        
+        var catSet = NSSet(objects: inviteCategory);
+        var types:UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Badge;
+        var mySettings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types
+            , categories: catSet);
+        UIApplication.sharedApplication().registerUserNotificationSettings(mySettings);
+
         return true
     }
 
@@ -27,10 +48,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        UIApplication.sharedApplication().cancelAllLocalNotifications();
+        if localNotif != nil{
+            localNotif!.fireDate = NSDate(timeIntervalSinceNow:3);
+            
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotif!);
+        }
+
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        println("11");
+        UIApplication.sharedApplication().cancelAllLocalNotifications();
+        if localNotif != nil{
+            localNotif!.fireDate = NSDate(timeIntervalSinceNow:3);
+            
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotif!);
+        }
+        
+
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -40,7 +77,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void){
+        var pasteBoard:UIPasteboard = UIPasteboard.generalPasteboard();
+        var pasteText = pasteBoard.string;
+        if pasteText != nil && pasteText != ""{
+            var Text2:String = trimSpace(pasteText!);
+            pasteBoard.string = switchFormat(Text2);
+            
+        }
+        if localNotif != nil{
+            localNotif!.fireDate = NSDate(timeIntervalSinceNow:3);
 
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotif!);
+        }
+        completionHandler();
+    }
 
 }
 

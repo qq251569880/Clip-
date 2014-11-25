@@ -40,6 +40,19 @@ class MainViewController: UIViewController,UITextViewDelegate {
         upTextView.delegate = self;
         bottomTextView.delegate = self;
         subViewY = subView.frame.origin.y;
+        
+
+        
+        if localNotif != nil{
+            UIApplication.sharedApplication().cancelAllLocalNotifications();
+            localNotif!.alertBody = "向左滑动显示转换按钮";
+            localNotif!.fireDate = NSDate(timeIntervalSinceNow:3);
+            localNotif!.timeZone = NSTimeZone.defaultTimeZone();
+            localNotif!.category = "INVITE_CATEGORY";
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotif!);
+           // UIApplication.sharedApplication().presentLocalNotificationNow(localNotif!);
+        }
+
     }
     
     override func didReceiveMemoryWarning() {
